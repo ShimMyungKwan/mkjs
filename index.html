@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('eadc99530857b26eaeff3951a43fa4f6');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '심명관♡최진솔 결혼식에 초대합니다!',
+        description: '2022년 1월 15일, 오후 6시, Market O',
+        imageUrl:
+          'https://drive.google.com/file/d/17TxM4UorrvJlJR0W3or_O4F_sK49qDET/view?usp=sharing',
+        link: {
+          mobileWebUrl: 'http://mjhappy.quv.kr',
+          webUrl: 'http://mjhappy.quv.kr',
+        },
+      },
+      social: {
+        likeCount: 2022, //99999가 최대입니다
+        commentCount: 1, //99999가 최대입니다
+        sharedCount: 15, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '💌모바일 청첩장 보기💌',
+          link: {
+            mobileWebUrl: 'http://mjhappy.quv.kr',
+            webUrl: 'http://mjhappy.quv.kr',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
